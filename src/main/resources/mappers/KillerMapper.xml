@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myapp.dbd_box.dao.KillerDao">
+
+    <select id="getKillerList" resultType="Killer">
+        select * from killer
+    </select>
+
+    <select id="getKillerById" resultType="Killer">
+        select * from killer where killer_id = #{killerId}
+    </select>
+
+    <select id="getKillerListByName" resultType="Killer">
+        SELECT * FROM killer
+        WHERE killer_name LIKE CONCAT('%', #{name}, '%') OR killer_othername LIKE CONCAT('%', #{name}, '%')
+    </select>
+
+
+</mapper>

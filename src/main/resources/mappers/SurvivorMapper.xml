@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myapp.dbd_box.dao.SurvivorDao">
+
+    <select id="getSurvivorList" resultType="Survivor">
+        select * from survivor
+    </select>
+
+    <select id="getSurvivorById" resultType="Survivor">
+        select * from survivor where survivor_id = #{survivorId}
+    </select>
+
+    <select id="getSurvivorListByName" resultType="Survivor">
+        SELECT * FROM survivor
+        WHERE survivor_name LIKE CONCAT('%', #{name}, '%') OR survivor_othername LIKE CONCAT('%', #{name}, '%')
+    </select>
+
+
+</mapper>

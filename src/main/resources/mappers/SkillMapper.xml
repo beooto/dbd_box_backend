@@ -1,0 +1,63 @@
+<!-- myapp/dbd_box/dao/SkillDao.xml -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myapp.dbd_box.dao.SkillDao">
+
+    <resultMap id="killerSkillResultMap" type="myapp.dbd_box.pojo.Skill">
+        <id property="skill_id" column="killer_skill_id"/>
+        <result property="id" column="killer_id"/>
+        <result property="skill_name" column="killer_skill_name"/>
+        <result property="skill_icon" column="killer_skill_icon"/>
+        <result property="skill_detail" column="killer_skill_detail"/>
+    </resultMap>
+
+    <select id="getKillerSkillList" resultMap="killerSkillResultMap">
+        select * from killer_skill
+    </select>
+
+    <select id="getKillerSkillById" resultMap="killerSkillResultMap">
+        select * from killer_skill where killer_skill_id = #{skill_id}
+    </select>
+
+    <select id="getKillerSkillByName" resultMap="killerSkillResultMap">
+        select * from killer_skill where killer_skill_name like CONCAT('%', #{skill_name}, '%')
+    </select>
+
+    <select id="getKillerSkillByDetail" resultMap="killerSkillResultMap">
+        select * from killer_skill where killer_skill_detail like CONCAT('%', #{skill_detail}, '%')
+    </select>
+
+    <select id="getKillerSkillByKillerID" resultMap="killerSkillResultMap">
+        select * from killer_skill where killer_id = #{killer_id}
+    </select>
+
+    <resultMap id="survivorSkillResultMap" type="myapp.dbd_box.pojo.Skill">
+        <id property="skill_id" column="survivor_skill_id"/>
+        <result property="id" column="survivor_id"/>
+        <result property="skill_name" column="survivor_skill_name"/>
+        <result property="skill_icon" column="survivor_skill_icon"/>
+        <result property="skill_detail" column="survivor_skill_detail"/>
+    </resultMap>
+
+    <select id="getSurvivorSkillList" resultMap="survivorSkillResultMap">
+        select * from survivor_skill
+    </select>
+
+    <select id="getSurvivorSkillById" resultMap="survivorSkillResultMap">
+        select * from survivor_skill where survivor_skill_id = #{id}
+    </select>
+
+    <select id="getSurvivorSkillByName" resultMap="survivorSkillResultMap">
+        select * from survivor_skill where survivor_skill_name like CONCAT('%', #{skill_name}, '%')
+    </select>
+
+    <select id="getSurvivorSkillByDetail" resultMap="survivorSkillResultMap">
+        select * from survivor_skill where survivor_skill_detail like CONCAT('%', #{detail}, '%')
+    </select>
+
+    <select id="getSurvivorSkillBySurvivorId" resultMap="survivorSkillResultMap">
+        select * from survivor_skill where survivor_id = #{detail}
+    </select>
+
+</mapper>
