@@ -8,12 +8,12 @@
     </select>
 
     <select id="getKillerById" resultType="Killer">
-        select * from killer where killer_id = #{killerId}
+        select * from killer where id = #{killerId}
     </select>
 
     <select id="getKillerListByName" resultType="Killer">
         SELECT * FROM killer
-        WHERE killer_name LIKE CONCAT('%', #{name}, '%') OR killer_othername LIKE CONCAT('%', #{name}, '%')
+        WHERE name LIKE CONCAT('%', #{name}, '%') OR other_name LIKE CONCAT('%', #{name}, '%')
     </select>
 
 

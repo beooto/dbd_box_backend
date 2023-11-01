@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class SurvivorVO {
-    private Integer survivor_id;
-    private String survivor_name;
-    private String survivor_icon;
+    private Integer id;
+    private String name;
+    private String icon;
 }

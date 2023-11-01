@@ -26,12 +26,12 @@ public class SurvivorServiceImpl implements SurvivorService {
         return SurvivorVOList;
     }
     @Override
-    public Survivor getSurvivorById(Integer SurvivorId) {
-        return SurvivorDao.getSurvivorById(SurvivorId);
+    public Survivor getSurvivorById(Integer id) {
+        return SurvivorDao.getSurvivorById(id);
     }
     @Override
-    public List<SurvivorVO> searchSurvivor(String SurvivorName){
-        List<Survivor> SurvivorList = SurvivorDao.getSurvivorListByName(SurvivorName);
+    public List<SurvivorVO> searchSurvivor(String name){
+        List<Survivor> SurvivorList = SurvivorDao.getSurvivorListByName(name);
         List<SurvivorVO> SurvivorVOList = aboutObject.SurvivorTOVO(SurvivorList);
         return SurvivorVOList;
     }

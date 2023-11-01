@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface KillerService {
     List<KillerVO> getKillerVOList();
-    Killer getKillerById(Integer killerId);
-    List<KillerVO> searchKiller(String killerName);
+    Killer getKillerById(Integer id);
+    List<KillerVO> searchKiller(String name);
     KillerVO getRandomKillerVO();
 }

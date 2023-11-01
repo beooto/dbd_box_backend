@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface SurvivorService {
     List<SurvivorVO> getSurvivorVOList();
-    Survivor getSurvivorById(Integer SurvivorId);
-    List<SurvivorVO> searchSurvivor(String SurvivorName);
+    Survivor getSurvivorById(Integer id);
+    List<SurvivorVO> searchSurvivor(String name);
     SurvivorVO getRandomSurvivorVO();
 }

@@ -27,8 +27,8 @@ public class SkillServiceImpl implements SkillService {
         return killerSkillVOList;
     }
     @Override
-    public Skill getKillerSkillById(Integer killerSkillId) {
-        return skillDao.getKillerSkillById(killerSkillId);
+    public Skill getKillerSkillById(Integer skillId) {
+        return skillDao.getKillerSkillById(skillId);
     }
     @Override
     public List<SkillVO> searchKillerSkill(String KNAD) {
@@ -40,8 +40,8 @@ public class SkillServiceImpl implements SkillService {
         return  killerSkillVOList;
     }
     @Override
-    public List<Skill> getKillerSkillByKillerId(Integer id) {
-        return skillDao.getKillerSkillByKillerID(id);
+    public List<Skill> getKillerSkillByKillerId(Integer killerId) {
+        return skillDao.getKillerSkillByKillerID(killerId);
     }
     @Override
     public SkillVO getRandomKillerSkill(){
@@ -56,8 +56,8 @@ public class SkillServiceImpl implements SkillService {
         return survivorSkillVOList;
     }
     @Override
-    public Skill getSurvivorSkillById(Integer survivorSkillId) {
-        return skillDao.getSurvivorSkillById(survivorSkillId);
+    public Skill getSurvivorSkillById(Integer skillId) {
+        return skillDao.getSurvivorSkillById(skillId);
     }
     @Override
     public List<SkillVO> searchSurvivorSkill(String KNAD) {
@@ -69,8 +69,8 @@ public class SkillServiceImpl implements SkillService {
         return  survivorSkillVOList;
     }
     @Override
-    public List<Skill> getSurvivorSkillBySurvivorId(Integer id) {
-        return skillDao.getSurvivorSkillBySurvivorId(id);
+    public List<Skill> getSurvivorSkillBySurvivorId(Integer killerId) {
+        return skillDao.getSurvivorSkillBySurvivorId(killerId);
     }
     @Override
     public SkillVO getRandomSurvivorSkill(){

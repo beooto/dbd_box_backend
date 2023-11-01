@@ -3,8 +3,6 @@ package myapp.dbd_box.dao;
 import myapp.dbd_box.pojo.Skill;
 import java.util.List;
 import org.springframework.stereotype.Repository;
-
-
 @Repository
 public interface SkillDao {
     List<Skill> getKillerSkillList();

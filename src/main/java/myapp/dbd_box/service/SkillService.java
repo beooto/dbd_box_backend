@@ -1,7 +1,6 @@
 package myapp.dbd_box.service;
 
 import myapp.dbd_box.pojo.Skill;
-import myapp.dbd_box.vo.KillerVO;
 import myapp.dbd_box.vo.SkillVO;
 
 import java.util.List;

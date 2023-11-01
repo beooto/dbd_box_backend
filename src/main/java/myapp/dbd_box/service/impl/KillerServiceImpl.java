@@ -25,12 +25,12 @@ public class KillerServiceImpl implements KillerService {
         return killerVOList;
     }
     @Override
-    public Killer getKillerById(Integer killerId) {
-        return killerDao.getKillerById(killerId);
+    public Killer getKillerById(Integer id) {
+        return killerDao.getKillerById(id);
     }
     @Override
-    public List<KillerVO> searchKiller(String killerName){
-        List<Killer> killerList = killerDao.getKillerListByName(killerName);
+    public List<KillerVO> searchKiller(String name){
+        List<Killer> killerList = killerDao.getKillerListByName(name);
         List<KillerVO> killerVOList = aboutObject.KillerTOVO(killerList);
         return killerVOList;
     }
