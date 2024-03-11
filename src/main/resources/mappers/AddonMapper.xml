@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="myapp.dbd_box.dao.AddonDao">
+<mapper namespace="myapp.dbd_box.dao.OfferingDao">
 
-    <resultMap id="addonMap" type="myapp.dbd_box.pojo.Addon">
-        <id property="addonId" column="addon_id"/>
-        <result property="killerId" column="killer_id"/>
-        <result property="icon" column="icon"/>
-        <result property="name" column="name"/>
-        <result property="detail" column="detail"/>
-    </resultMap>
+    <select id="getAddonListByKillerId" resultType="Offering">
+        select * from offering where id = #{id}
+    </select>
 
-    <select id="getAddonListByKillerId" resultMap="addonMap">
-        select * from addon where killer_id = #{killerId}
+    <select id="getOfferingListByClass" resultType="Offering">
+        select * from offering where class_name = #{class_name}
+    </select>
+
+    <select id="getOfferingListByBelong" resultType="Offering">
+        select * from offering where belong = #{id}
     </select>
 
 </mapper>

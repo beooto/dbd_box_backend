@@ -31,13 +31,12 @@ public class SkillServiceImpl implements SkillService {
         return skillDao.getKillerSkillById(skillId);
     }
     @Override
-    public List<SkillVO> searchKillerSkill(String KNAD) {
+    public List<Skill> searchKillerSkill(String KNAD) {
         List<Skill> killerSkillListN = skillDao.getKillerSkillByName(KNAD);
         List<Skill> killerSkillListD = skillDao.getKillerSkillByDetail(KNAD);
         List<Skill> killerSkillList = Stream.concat(killerSkillListN.stream(), killerSkillListD.stream())
                 .collect(Collectors.toList());
-        List<SkillVO> killerSkillVOList = aboutObject.SkillTOVO(killerSkillList);
-        return  killerSkillVOList;
+        return  killerSkillList;
     }
     @Override
     public List<Skill> getKillerSkillByKillerId(Integer killerId) {
@@ -60,13 +59,12 @@ public class SkillServiceImpl implements SkillService {
         return skillDao.getSurvivorSkillById(skillId);
     }
     @Override
-    public List<SkillVO> searchSurvivorSkill(String KNAD) {
+    public List<Skill> searchSurvivorSkill(String KNAD) {
         List<Skill> survivorSkillListN = skillDao.getSurvivorSkillByName(KNAD);
         List<Skill> survivorSkillListD = skillDao.getSurvivorSkillByDetail(KNAD);
         List<Skill> survivorSkillList = Stream.concat(survivorSkillListN.stream(), survivorSkillListD.stream())
                 .collect(Collectors.toList());
-        List<SkillVO> survivorSkillVOList = aboutObject.SkillTOVO(survivorSkillList);
-        return  survivorSkillVOList;
+        return  survivorSkillList;
     }
     @Override
     public List<Skill> getSurvivorSkillBySurvivorId(Integer killerId) {

@@ -11,6 +11,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.Collections;
+
 
 @EnableSwagger2
 @EnableKnife4j
@@ -27,7 +29,9 @@ public class Knife4jConfig {
                 //这里指定Controller扫描包路径
                 .apis(RequestHandlerSelectors.basePackage("myapp.dbd_box.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .protocols(Collections.singleton("https")); // 添加这一行以支持HTTPS
+
         return docket;
     }
     private ApiInfo apiInfo(){

@@ -40,10 +40,10 @@ public class SkillController {
     @GetMapping("skill/killer/search/{KNAD}")
     @ApiOperation("通过名称和详情搜索 Killer 的 Skill")
     @ApiParam(name = "KNAD", value = "Killer 的名称或详情", required = true)
-    public ResponseEntity<List<SkillVO>> searchKillerSkill(@PathVariable String KNAD) {
-        List<SkillVO> skillVOList = skillService.searchKillerSkill(KNAD);
-        if (!skillVOList.isEmpty()) {
-            return ResponseEntity.ok(skillVOList);
+    public ResponseEntity<List<Skill>> searchKillerSkill(@PathVariable String KNAD) {
+        List<Skill> skillList = skillService.searchKillerSkill(KNAD);
+        if (!skillList.isEmpty()) {
+            return ResponseEntity.ok(skillList);
         } else {
             return ResponseEntity.notFound().build();
         }
@@ -86,10 +86,10 @@ public class SkillController {
     @GetMapping("skill/survivor/search/{KNAD}")
     @ApiOperation("通过名称和详情搜索 Survivor 的 Skill")
     @ApiParam(name = "KNAD", value = "Survivor 的名称或详情", required = true)
-    public ResponseEntity<List<SkillVO>> searchSurvivorSkill(@PathVariable String KNAD) {
-        List<SkillVO> skillVOList = skillService.searchSurvivorSkill(KNAD);
-        if (!skillVOList.isEmpty()) {
-            return ResponseEntity.ok(skillVOList);
+    public ResponseEntity<List<Skill>> searchSurvivorSkill(@PathVariable String KNAD) {
+        List<Skill> skillList = skillService.searchSurvivorSkill(KNAD);
+        if (!skillList.isEmpty()) {
+            return ResponseEntity.ok(skillList);
         } else {
             return ResponseEntity.notFound().build();
         }

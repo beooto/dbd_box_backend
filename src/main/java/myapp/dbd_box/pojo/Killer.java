@@ -8,10 +8,10 @@ public class Killer {
     private String name;
     private String icon;
     private String image;
-    private String real_name;
     private String other_name;
-    private String map;
+    private String height;
     private String terror_radius;
+    private String speed;
     private String background;
     private String power_icon;
     private String power_detail;
